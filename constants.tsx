@@ -1,4 +1,3 @@
-import React from 'react';
 import { PromptTemplate, Framework } from './types';
 
 export const POPULAR_TEMPLATES: PromptTemplate[] = [
@@ -52,10 +51,12 @@ export const COGNITIVE_FRAMEWORKS: Framework[] = [
   }
 ];
 
-// Memoized to prevent unnecessary re-renders when parent components update
-export const ElectricianGenieIcon = React.memo(() => (
+const ELECTRICIAN_GENIE_ICON_ELEMENT = (
   <div className="relative w-12 h-12 flex items-center justify-center bg-yellow-500 rounded-xl shadow-lg">
     <span className="text-2xl">⚡</span>
     <span className="absolute -top-1 -right-1 text-xs">🛠️</span>
   </div>
-));
+);
+
+// Returns a static element to prevent unnecessary re-renders when parent components update
+export const ElectricianGenieIcon = () => ELECTRICIAN_GENIE_ICON_ELEMENT;
