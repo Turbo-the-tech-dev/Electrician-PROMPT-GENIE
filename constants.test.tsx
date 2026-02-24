@@ -26,4 +26,13 @@ describe('ElectricianGenieIcon', () => {
   it('should be a memoized component', () => {
     assert.strictEqual(typeof ElectricianGenieIcon, 'object');
   });
+
+  it('should return the same element reference (hoisted)', () => {
+    // Access the inner function of the memoized component
+    // @ts-ignore - Accessing internal property for testing optimization
+    const Component = ElectricianGenieIcon.type;
+    const element1 = Component();
+    const element2 = Component();
+    assert.strictEqual(element1, element2);
+  });
 });

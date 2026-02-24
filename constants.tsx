@@ -52,10 +52,12 @@ export const COGNITIVE_FRAMEWORKS: Framework[] = [
   }
 ];
 
-// Memoized to prevent unnecessary re-renders when parent components update
-export const ElectricianGenieIcon = React.memo(() => (
+const GENIE_ICON = (
   <div className="relative w-12 h-12 flex items-center justify-center bg-yellow-500 rounded-xl shadow-lg">
     <span className="text-2xl">⚡</span>
     <span className="absolute -top-1 -right-1 text-xs">🛠️</span>
   </div>
-));
+);
+
+// Memoized to prevent unnecessary re-renders when parent components update
+export const ElectricianGenieIcon = React.memo(() => GENIE_ICON);
