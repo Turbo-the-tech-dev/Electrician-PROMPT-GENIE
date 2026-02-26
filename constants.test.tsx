@@ -23,7 +23,9 @@ describe('ElectricianGenieIcon', () => {
     assert.ok(html.includes('🛠️'));
   });
 
-  it('should be a memoized component', () => {
-    assert.strictEqual(typeof ElectricianGenieIcon, 'object');
+  it('should return a static element reference', () => {
+    const element1 = ElectricianGenieIcon();
+    const element2 = ElectricianGenieIcon();
+    assert.strictEqual(element1, element2);
   });
 });
